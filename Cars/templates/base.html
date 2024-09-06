@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}{% endblock page_title %}</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'cars_view' %}">Carros</a></li>
+        <li><a href="{% url 'form_view' %}">Cadastrar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+    
+  <footer>
+    <p>&copy; 2024 TWT Multimarcas</p>
+  </footer>
+</body>
+</html>
